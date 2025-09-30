@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "name": "Alice Johnson",
+    "age": 34,
+    "disease": "Diabetes",
+    "symptoms": ["Frequent urination", "Excessive thirst", "Fatigue"]
+  },
+  {
+    "id": 2,
+    "name": "Bob Smith",
+    "age": 45,
+    "disease": "Hypertension",
+    "symptoms": ["Headache", "Dizziness", "Blurred vision"]
+  },
+  {
+    "id": 3,
+    "name": "Charlie Brown",
+    "age": 29,
+    "disease": "Asthma",
+    "symptoms": ["Shortness of breath", "Coughing", "Chest tightness"]
+  }
+]
