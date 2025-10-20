@@ -1,0 +1,24 @@
+[
+  {
+    "AdmissionID": 1,
+    "PatientID": 1,
+    "DoctorID": 1,
+    "HospitalID": 1,
+    "InsuranceProviderID": 1,
+    "ConditionID": 1,
+    "DateOfAdmission": "2024-01-31",
+    "BillingAmount": 18856.28,
+    "AdmissionType": "Urgent"
+  },
+  {
+    "AdmissionID": 2,
+    "PatientID": 2,
+    "DoctorID": 2,
+    "HospitalID": 2,
+    "InsuranceProviderID": 2,
+    "ConditionID": 2,
+    "DateOfAdmission": "2024-02-15",
+    "BillingAmount": 7500.00,
+    "AdmissionType": "Elective"
+  }
+]

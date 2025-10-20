@@ -1,0 +1,10 @@
+[
+  {
+    "ConditionID": 1,
+    "Name": "Cancer"
+  },
+  {
+    "ConditionID": 2,
+    "Name": "Diabetes"
+  }
+]

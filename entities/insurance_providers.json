@@ -1,0 +1,10 @@
+[
+  {
+    "InsuranceProviderID": 1,
+    "Name": "Blue Cross"
+  },
+  {
+    "InsuranceProviderID": 2,
+    "Name": "Aetna"
+  }
+]
