@@ -1,7 +1,9 @@
 const express = require("express");
 const router = express.Router();
 const Patient = require("../models/patient-model");
-const { validatePatient } = require("../../middlewares/validationMiddleware");
+const createPatientRules = require("../middlewares/create-patient-rules");
+const updatePatientRules = require("../middlewares/update-patient-rules");
+const checkValidation = require("../../../shared/middlewares/check-validation");
 
 // ✅ GET all patients
 router.get("/", async (req, res) => {
@@ -27,7 +29,7 @@ router.get("/:id", async (req, res) => {
 });
 
 // ✅ POST new patient
-router.post("/", validatePatient, async (req, res) => {
+router.post("/", createPatientRules, checkValidation, async (req, res) => {
   try {
     const lastPatient = await Patient.findOne().sort({ PatientID: -1 });
     const newID = lastPatient ? lastPatient.PatientID + 1 : 1;
@@ -43,7 +45,7 @@ router.post("/", validatePatient, async (req, res) => {
 });
 
 // ✅ PUT update patient
-router.put("/:id", validatePatient, async (req, res) => {
+router.put("/:id", updatePatientRules, checkValidation, async (req, res) => {
   try {
     const updatedPatient = await Patient.findOneAndUpdate(
       { PatientID: req.params.id },

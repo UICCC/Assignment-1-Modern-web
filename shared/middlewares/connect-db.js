@@ -3,6 +3,7 @@ require("dotenv").config();
 
 async function connectDB(req, res, next) {
   const DB_URL = process.env.DB_URL;
+  const DB_NAME = process.env.DB_NAME; // optional
 
   if (!DB_URL) {
     console.error("❌ DB_URL not found in environment variables");
@@ -14,11 +15,11 @@ async function connectDB(req, res, next) {
       return next(); // Already connected
     }
 
-    await mongoose.connect(DB_URL, {
-      dbName: "HospitalManagementDB",
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
+    // Build options object; only include dbName when explicitly provided
+    const connectOptions = {};
+    if (DB_NAME) connectOptions.dbName = DB_NAME;
+
+    await mongoose.connect(DB_URL, connectOptions);
 
     console.log("✅ MongoDB Connected Successfully");
     next();
