@@ -5,8 +5,9 @@ const createHospitalRules = [
     .notEmpty().withMessage("Hospital name is required")
     .isLength({ min: 3 }).withMessage("Hospital name must be at least 3 characters"),
 
-  body("Location")
-    .notEmpty().withMessage("Location is required"),
+  body("Address")
+    .notEmpty().withMessage("Address is required")
+    .isLength({ min: 5 }).withMessage("Address must be at least 5 characters"),
 
   body("ContactNumber")
     .optional()

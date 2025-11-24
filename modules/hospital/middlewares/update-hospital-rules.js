@@ -8,9 +8,9 @@ const updateHospitalRules = [
     .optional()
     .isLength({ min: 3 }).withMessage("Hospital name must be at least 3 characters"),
 
-  body("Location")
+  body("Address")
     .optional()
-    .isLength({ min: 3 }).withMessage("Location must be at least 3 characters"),
+    .isLength({ min: 5 }).withMessage("Address must be at least 5 characters long"),
 
   body("ContactNumber")
     .optional()

@@ -1,10 +1,14 @@
 [
   {
     "ConditionID": 1,
-    "Name": "Cancer"
+    "ConditionName": "Cancer",
+    "Description": "Severe cancer",
+    "Severity": "Severe"
   },
   {
     "ConditionID": 2,
-    "Name": "Diabetes"
+    "ConditionName": "Diabetes",
+    "Description": "Type 2 diabetes",
+    "Severity": "Moderate"
   }
 ]

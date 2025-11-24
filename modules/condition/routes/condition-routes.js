@@ -20,30 +20,27 @@ router.get("/", async (req, res) => {
   res.json(conditions);
 });
 
-// GET condition by ID
 router.get("/:id", async (req, res) => {
-  const condition = await conditionModel.getConditionById(req.params.id);
+  const id = Number(req.params.id); // convert to number
+  const condition = await conditionModel.getConditionById(id);
   if (!condition) return res.status(404).json({ message: "Condition not found" });
   res.json(condition);
 });
 
-// POST new condition
-router.post("/", createConditionRules, validate, async (req, res) => {
-  const newCondition = await conditionModel.addNewCondition(req.body);
-  res.status(201).json(newCondition);
-});
-
 // PUT update condition
 router.put("/:id", updateConditionRules, validate, async (req, res) => {
-  const updated = await conditionModel.updateExistingCondition(req.params.id, req.body);
+  const id = Number(req.params.id); // convert to number
+  const updated = await conditionModel.updateExistingCondition(id, req.body);
   if (!updated) return res.status(404).json({ message: "Condition not found" });
   res.json(updated);
 });
 
 // DELETE condition
 router.delete("/:id", async (req, res) => {
-  await conditionModel.deleteCondition(req.params.id);
+  const id = Number(req.params.id); // convert to number
+  await conditionModel.deleteCondition(id);
   res.status(204).send();
 });
+
 
 module.exports = router;
